@@ -1,0 +1,4 @@
+vllm==0.8.2
+pymilvus
+git+https://github.com/illuin-tech/colpali.git@481eb20
+transformers==4.51.3
