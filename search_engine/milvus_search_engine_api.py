@@ -6,7 +6,7 @@ import uvicorn
 from typing import List, Dict, Any  # Import type hints make the code clearer
 
 
-from milvus_search_engine import MilvusSearchEngine
+from search_engine.milvus_search_engine import MilvusSearchEngine
 from PIL import Image
 import base64
 from io import BytesIO
@@ -108,3 +108,5 @@ async def search(request_data: Dict[str, Any]):
 
 if __name__ == "__main__":
     uvicorn.run(app, host="0.0.0.0", port=8001)
+
+

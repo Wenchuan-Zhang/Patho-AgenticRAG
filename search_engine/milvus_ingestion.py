@@ -9,7 +9,7 @@ from pymilvus import MilvusClient
 from colpali_engine.utils.torch_utils import ListDataset, get_torch_device
 from torch.utils.data import DataLoader
 from colpali_engine.models import ColQwen2, ColQwen2Processor, ColPali, ColPaliProcessor
-from milvus import MilvusColQwen  
+from search_engine.milvus import MilvusColQwen  
 import hashlib
 
 
@@ -196,3 +196,4 @@ if __name__ == "__main__":
     # Add the `use_partition` parameter
     ingestion = ImageIngestion(image_folder=image_folder, milvus_qwen=milvus_qwen, use_partition=True)
     ingestion.run()
+

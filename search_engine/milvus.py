@@ -263,3 +263,5 @@ class MilvusColQwen:
             expr=f"doc_id == {doc_id}", output_fields=["doc_id"], limit=1
         )
         return len(results) > 0
+
+

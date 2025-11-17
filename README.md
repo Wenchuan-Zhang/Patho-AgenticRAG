@@ -70,12 +70,12 @@ This document outlines the workflow for setting up and running the **Patho-Agent
 ## 1. Milvus Ingestion
 To ingest pathology images into Milvus for searching:
 ```bash
-python milvus_ingestion.py
+python search_engine/milvus_ingestion.py
 ```
 ## 2. Milvus Search Engine API
 Next, run the Milvus search engine API to handle the retrieval process:
 ```bash
-python milvus_search_engine_api.py
+python search_engine/milvus_search_engine_api.py
 ```
 ## 3. Model Download
 Download the necessary models from Hugging Face. These models are critical for the workflow and should be stored locally.
@@ -108,7 +108,7 @@ CUDA_VISIBLE_DEVICES=4,5 python3 -m vllm.entrypoints.openai.api_server --model .
 ## 5. Running the Demo
 Finally, run the Patho-AgenticRAG script for a demo:
 ```bash
-python patho_agenticrag.py
+python demo/patho_agenticrag.py
 ```
 
 ## Acknowledgements✨

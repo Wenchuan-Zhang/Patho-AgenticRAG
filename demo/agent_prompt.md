@@ -30,6 +30,7 @@ In your response, you can use the following tools:
 <think> Your thoughts and reasoning </think>
 <tool_call>
 {“name”: “Tool name”, “parameters”: {“”}
- {“name”: “... ...”, “parameters”: {“... ...”}}}
+ {“name”: “… …”, “parameters”: {“… …”}}}
 ...
 </tool_call>
+

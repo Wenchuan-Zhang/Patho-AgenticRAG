@@ -7,6 +7,7 @@ import re
 from jinja2 import Template
 import threading
 import time
+import os
 
 class MyAgent:
     def __init__(self, qwen_cfg: dict, rag, patho_r1_url):
@@ -32,7 +33,7 @@ class MyAgent:
     def tool(self, query: str, image: Image.Image, timeout: float = None) -> tuple[bool, str | None]:
         """Use Qwen-VL to which tool is needed"""
         image_b64 = self.encode_image(image)
-        prompt_path = "./agent_prompt.md"
+        prompt_path = os.path.join(os.path.dirname(__file__), "agent_prompt.md")
         with open(prompt_path, "r") as f:
             prompt_template = Template(f.read())
         prompt = prompt_template.render(query=query)
@@ -50,6 +51,7 @@ class MyAgent:
         #         keyword = line.split(":", 1)[1].strip()
         #         if keyword.lower() == "none":
         #             keyword = None
+        #         return output
         return output
 
     def verify_rag_result(self, query: str, rag_result: str) -> bool:
@@ -226,7 +228,7 @@ Context: {context if context else 'None'}
                 except Exception as e:
                     print(f"[Agent.run] VRAG retrieval error for '{q}': {e}")
                     return (q, None)
-
+            
             with concurrent.futures.ThreadPoolExecutor() as executor:
                 futures = {
                     executor.submit(process_rag_query, q): q for q in rag_queries
@@ -281,7 +283,7 @@ Context: {context if context else 'None'}
 
 
 if __name__ == "__main__":
-    from vrag_agent import VRAG
+    from demo.vrag_agent import VRAG
     from PIL import Image
 
     llm_cfg = {
@@ -311,3 +313,5 @@ D. Osteosarcoma
     result = agent.run(query, image)
     print("Final answer from agent.run():")
     print(result)
+
+

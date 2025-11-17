@@ -15,7 +15,7 @@ import base64
 from PIL import Image
 from io import BytesIO
 import torch
-from milvus import MilvusColQwen
+from search_engine.milvus import MilvusColQwen
 from colpali_engine.utils.torch_utils import ListDataset, get_torch_device
 from torch.utils.data import DataLoader
 from colpali_engine.models import ColQwen2, ColQwen2Processor
@@ -377,3 +377,5 @@ def process_and_search(engine, dataset, topk, use_cache=True, force_refresh=Fals
         print("Recall:", score / processed, "Full Recall:", top_100_score / processed)
 
     print(f"Total process took {time.time() - start_time:.4f} seconds")
+
+
