@@ -6,7 +6,7 @@ class LogUtil:
     def __init__(
         self,
         algo_config: dict,
-        mongo_config_path: str = "code_discovery/config.yaml",
+        mongo_config_path: str = "multimodal_fusion/config.yaml",
         collection_name: str = "mm_rag",
         flush_interval: int = 10,
     ):
@@ -71,3 +71,5 @@ class LogUtil:
         self.collection.update_one(
             self.algo_config, {"$push": {f"logs.{metric_name}": value}}
         )
+
+

@@ -53,3 +53,5 @@ def selLexicase(individuals, k):
     selected_individuals = [individuals[i] for i in selected_indices]
 
     return selected_individuals
+
+

@@ -58,3 +58,5 @@ def ndcg_at_k(full_filepaths, ideal_page, k=None):
     idcg = sum((2**rel - 1) / math.log2(idx + 2) for idx, rel in enumerate(ideal_rels))
 
     return dcg / idcg if idcg > 0 else 0
+
+

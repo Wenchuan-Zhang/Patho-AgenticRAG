@@ -214,3 +214,5 @@ def mul(a: float, b: float) -> float:
     if USE_GPU and isinstance(a, torch.Tensor) and isinstance(b, torch.Tensor):
         return a * b
     return a * b
+
+

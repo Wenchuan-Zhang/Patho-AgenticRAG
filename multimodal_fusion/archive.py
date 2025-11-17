@@ -8,7 +8,7 @@ import numpy as np
 from deap.tools import HallOfFame
 
 
-from code_discovery.surrogate_model import SurrogateModel
+from multimodal_fusion.surrogate_model import SurrogateModel
 from search_engine.offline_rerank import process_and_search
 
 
@@ -134,7 +134,7 @@ class EasyHOF(tools.HallOfFame):
         self.best_test_score = None
 
     def update(self, population):
-        # Let the base HallOfFame update its internal list
+        # Let the base Hall of Fame update its internal list
         super().update(population)
 
         if len(self) == 0:
@@ -205,3 +205,5 @@ class SurrogateHOF(CustomHOF):
             print(f"║  Test fitness      : {self.best_test_score}")
             print(f"║  Tree     : {self.best_ind!s}")
             print("╚══════════════════════════════╝")
+
+

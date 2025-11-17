@@ -5,10 +5,10 @@ import torch
 from llm4ad.base import Evaluation
 from sklearn.model_selection import train_test_split
 
-from code_discovery.ndcg import ndcg_at_k
-from code_discovery.time_util import timeit
+from multimodal_fusion.ndcg import ndcg_at_k
+from multimodal_fusion.time_util import timeit
 from search_engine.offline_rerank import MilvusSearchEngine, exist, top_k
-from code_discovery.basic_functions import USE_GPU
+from multimodal_fusion.basic_functions import USE_GPU
 
 template_program = '''
 import numpy as np
@@ -209,3 +209,5 @@ class SimilarityEvaluation(Evaluation):
                 return 1 / (idx + 1)
         # If no relevant item is found, return 0
         return 0
+*** End Patch }}}...```} #-}
+

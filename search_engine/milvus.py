@@ -12,7 +12,7 @@ from pymilvus import connections, Collection
 from torch.utils.data import DataLoader
 from tqdm import tqdm
 
-from code_discovery.time_util import timeit
+from multimodal_fusion.time_util import timeit
 
 FAST_MODE = True
 

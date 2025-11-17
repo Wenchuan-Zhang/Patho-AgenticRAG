@@ -1,11 +1,11 @@
-from code_discovery.analysis.log_plot_tool import LogUtil
+from multimodal_fusion.analysis.log_plot_tool import LogUtil
 from sklearn.preprocessing import normalize
 import numpy as np
 from deap import tools, gp
 from sklearn.cluster import KMeans
 
-from code_discovery.archive import SurrogateHOF, ParetoFrontHOF
-from code_discovery.surrogate_model import SurrogateModel, test_pairs
+from multimodal_fusion.archive import SurrogateHOF, ParetoFrontHOF
+from multimodal_fusion.surrogate_model import SurrogateModel, test_pairs
 from typing import Optional
 from search_engine.offline_rerank import process_and_search
 
@@ -310,3 +310,5 @@ def eaSimple(
                 ind.instances = sel_idx
             print("Finished instance selection, selected instances:", sel_idx)
     return population, logbook
+
+

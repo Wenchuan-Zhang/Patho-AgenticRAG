@@ -2,7 +2,7 @@ import yaml
 from llm4ad.method.eoh import EoH, EoHProfiler
 from llm4ad.tools.llm.llm_api_openai import OpenAIAPI
 
-from code_discovery.code_evaluation import SimilarityEvaluation
+from multimodal_fusion.code_evaluation import SimilarityEvaluation
 
 if __name__ == "__main__":
     with open("config.yaml", "r") as f:
@@ -26,3 +26,5 @@ if __name__ == "__main__":
         debug_mode=False,
     )
     method.run()
+
+

@@ -4,7 +4,7 @@ from pathlib import Path
 
 from scipy.stats import kurtosis
 
-from code_discovery.time_util import timeit
+from multimodal_fusion.time_util import timeit
 
 os.environ["OMP_NUM_THREADS"] = "4"
 os.environ["MKL_NUM_THREADS"] = "4"

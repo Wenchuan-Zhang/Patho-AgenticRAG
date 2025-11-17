@@ -28,3 +28,5 @@ if __name__ == "__main__":
     mongo_config_path = "config.yaml"
     collection_name = "mm_rag"
     clean_mm_rag_collection(mongo_config_path, collection_name)
+
+
