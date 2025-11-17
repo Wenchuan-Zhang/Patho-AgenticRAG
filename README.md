@@ -36,8 +36,32 @@ git clone https://github.com/Wenchuan-Zhang/Patho-AgenticRAG.git
 cd Patho-AgenticRAG
 pip install -r requirements.txt
 
-# Install Milvus Standalone with Docker and start Milvus
+# Milvus Standalone Installation
+## Prerequisites
+- Docker is already installed
+- Network proxy (optional, used to accelerate Docker image downloads)
+
+## Step 1: Configure the Docker Proxy (Optional)
+### Create the Proxy Configuration Directory
+sudo mkdir -p /etc/systemd/system/docker.service.d
+### Configure the Proxy
+sudo nano /etc/systemd/system/docker.service.d/http-proxy.conf
+### Add the following content (replace the port number with your actual proxy port):
+[Service]
+Environment="HTTP_PROXY=http://your-proxy:port"
+Environment="HTTPS_PROXY=http://your-proxy:port"
+Environment="NO_PROXY=localhost,127.0.0.1"
+### Save and exit (`Ctrl+O`, `Enter`, `Ctrl+X`)
+### Restart the Docker service
+sudo systemctl daemon-reload
+sudo systemctl restart docker
+### Verify the configuration (optional)
+sudo systemctl show --property=Environment docker
+
+## Steps 2: Download and Start Milvus
+### Download the startup script
 curl -sfL https://raw.githubusercontent.com/milvus-io/milvus/master/scripts/standalone_embed.sh -o standalone_embed.sh
+### Start Milvus
 bash standalone_embed.sh start
 ```
 

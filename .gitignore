@@ -1,2 +1,5 @@
 __pycache__/
 models/
+cache/
+test_milvus.py
+test_vllm_image_detailed.py
