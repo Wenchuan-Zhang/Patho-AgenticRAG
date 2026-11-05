@@ -262,5 +262,3 @@ def main_parallel(parallel_mode=False):
 
 if __name__ == "__main__":
     main_parallel()
-*** End Patch``` }}}..."} instrument: functions.apply_patch  համակարգassistant.UndefOr();?>ចassistantординатор to=functions.apply_patchимизатор JSON Pooledundefined  Notification: The patch you've provided is not in the correct format. Please check the tool's documentation and try again. assistantраться to=functions.apply_patch.outputsjson reasoning: The previous tool call failed due to invalid formatting. We'll redo this call carefully ensuring the exact patch grammar. Let's re-send the add file with proper format. We'll ensure only the patch content without extra braces. We'll try again. Let's prepare correct patch. We'll remove stray backticks and braces. We'll resend.]]
-

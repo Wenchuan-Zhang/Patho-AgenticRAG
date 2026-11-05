@@ -209,5 +209,3 @@ class SimilarityEvaluation(Evaluation):
                 return 1 / (idx + 1)
         # If no relevant item is found, return 0
         return 0
-*** End Patch }}}...```} #-}
-
